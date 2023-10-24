@@ -1,70 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles.css">
     <script src="./1.js"></script>
     <title>Formulario de Información Personal</title>
 </head>
+
 <body>
-    <h1>Formulario de Información Personal</h1>
-    <div id="formulario" class="formulario">
-        <div>
-            <h2 class="alert" id="alertaadso"></h2>
-        </div>
-        <div class="campo">
-            <label for="nombres">Nombres:</label>
-            <input type="text" id="nombres" name="nombres" required>
-        </div>
+    <div class="titulo">
+        <h1>Formulario de Información Personal</h1>
+    </div>
+    <div class="cont_for">
+        <div id="formulario" class="formulario">
+            <div>
+                <h2 class="alert" id="alertaadso"></h2>
+            </div>
+            <div class="campo">
+                <label for="nombres">Nombres:</label>
+                <input type="text" id="nombres" name="nombres" required>
+            </div>
 
-        <div class="campo">
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" id="apellidos" name="apellidos" required>
-        </div>
+            <div class="campo">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+            </div>
 
-        <div class="campo">
-            <label>Tipo de Documento:</label>
-            <input type="radio" id="cedula" name="tipo_documento" value="Cédula" required>Cédula
-            <input type="radio" id="Tarjeta de identidad" name="tipo_documento" value="Tarjeta de identidad" required>Tarjeta de identidad
-            <input type="radio" id="otro" name="tipo_documento" value="Otro" required>Otro
-        </div>
+            <div class="campo">
+                <label>Tipo de Documento:</label>
+                <div class="cont_doc">
+                    <input type="radio" id="cedula" name="tipo_documento" value="Cédula" required>Cédula
+                </div>
+                <div class="cont_doc">
+                    <input type="radio" id="Tarjeta de identidad" name="tipo_documento" value="Tarjeta de identidad" required>Tarjeta de identidad
+                </div>
+                <div class="cont_doc">
+                    <input type="radio" id="otro" name="tipo_documento" value="Otro" required>Otro
+                </div>
+            </div>
 
-        <div class="campo">
-            <label for="numero_documento">Número de Documento:</label>
-            <input type="number" id="numero_documento" name="numero_documento" required>
-        </div>
+            <div class="campo">
+                <label for="numero_documento">Número de Documento:</label>
+                <input type="number" id="numero_documento" name="numero_documento" required>
+            </div>
 
-        <div class="campo">
-            <label>Género:</label>
-            <input type="radio" id="masculino" name="genero" value="Masculino" required>Masculino
-            <input type="radio" id="femenino" name="genero" value="Femenino" required>Femenino
-            <input type="radio" id="otro_genero" name="genero" value="Otro" required>Otro
-        </div>
+            <div class="campo">
+                <label>Género:</label>
+                <div class="cont_gen">
+                    <input type="radio" id="masculino" name="genero" value="Masculino" required>Masculino
+                </div>
+                <div class="cont_gen">
+                    <input type="radio" id="femenino" name="genero" value="Femenino" required>Femenino
+                </div>
+                <div class="cont_gen">
+                    <input type="radio" id="otro_genero" name="genero" value="Otro" required>Otro
+                </div>
+            </div>
 
-        <div class="campo">
-            <label for="telefono">Teléfono:</label>
-            <input type="number" id="telefono" name="telefono">
-        </div>
+            <div class="campo">
+                <label for="telefono">Teléfono:</label>
+                <input type="number" id="telefono" name="telefono">
+            </div>
 
-        <div class="campo">
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required>
-        </div>
+            <div class="campo">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
 
-        <div class="campo">
-            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-        </div>
+            <div class="campo">
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+            </div>
 
-        <div class="campo">
-            <label for="notificaciones">Recibir notificaciones por correo:</label>
-            <input type="checkbox" id="notificaciones" name="notificaciones" value="Si" required>Sí
-        </div>
+            <div class="campo">
+                <label for="notificaciones">Recibir notificaciones por correo:</label>
+                <div class="cont_notifi">
+                    <input type="checkbox" id="notificaciones" name="notificaciones" value="Si" required>Sí
+                </div>
+            </div>
 
-        <div class="campo">
-            <input type="submit" value="Enviar" onclick="guardar()">
+            <div class="campo_boton">
+                <input type="submit" value="Enviar" onclick="validar()">
+            </div>
         </div>
     </div>
-</body>
-</html>
+    <div class="tabla">
 
+        <table class="tg">
+            <colgroup>
+                <col class="col_nombre">
+                <col class="col_apellido">
+                <col class="col_tipo_doc">
+                <col class="col_num_doc">
+                <col class="col_genero">
+                <col class="col_fecha">
+                <col class="col_telefono">
+                <col class="col_correo">
+                <col class="col_opciones">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tg-header">Nombre</th>
+                    <th class="tg-header">Apellido</th>
+                    <th class="tg-header">Tipo documento</th>
+                    <th class="tg-header">Número documento</th>
+                    <th class="tg-header">Genero</th>
+                    <th class="tg-header">Fecha nacimiento</th>
+                    <th class="tg-header">Telefono</th>
+                    <th class="tg-header">Correo</th>
+                    <th class="tg-header">Opciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla">
+
+            </tbody>
+        </table>
+    </div>
+    <div id="cont_cards" class="cont_card">
+
+    </div>
+</body>
+
+</html>
