@@ -20,8 +20,8 @@ body {
     font-weight: bold;
 }
 
-.cont_00 {
-    display: nonE;
+.cont_01, .cont_02{
+    display: none;
 }
 
 .cont_main {
@@ -102,7 +102,6 @@ body {
     color: white;
     width: 40%;
     padding: 8px;
-
 }
 
 .presu {
@@ -130,8 +129,6 @@ body {
     padding: 8px;
     border-radius: 4px;
     font-size: 25px;
-
-
 }
 
 .boton2{
@@ -141,5 +138,14 @@ body {
     color: white;
     width: 80%;
     padding: 10px;
-    
+}
+
+.boton5{
+    display: none;
+    border-radius: 6px;
+    border: 2px solid rgb(170, 170, 170);
+    background-color: rgb(15, 155, 27);
+    color: white;
+    width: 40%;
+    padding: 8px;
 }

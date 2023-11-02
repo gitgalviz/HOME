@@ -31,25 +31,24 @@
                 <input class="box2" type="number" name="cantidad" id="box2" placeholder="Cantidad en $" />
             </div>
             <div class="cont_03">
-                <input class="boton1" type="button" value="Agregar" placeholder="Agregar" />
+                <input class="boton1" type="button" value="Agregar" id="boton_p" placeholder="Agregar" onclick="iniciar()"/>
+                <input class="boton5" type="button" value="Agregar" id="boton_s" placeholder="Agregar" onclick="registrar()"/>
             </div>
         </div>
         <div class="cont_main2">
             <div class="titulo_02">
                 <p>Listado</p>
             </div>
-            <div class="cont_cards">
-                <div class="cards">
-                    <div class="articulo">Ropa</div>
-                    <div class="precio">50000</div>
-                    <button class="boton2">Borrar</button>
-                </div>
+            <div class="cont_cards" id="cont_cards">
+                
             </div>
             <div class="presu">
                 <p>Presupuesto:</p>
+                <p id="texto_presupuesto"></p>
             </div>
             <div class="saldo">
                 <p>Saldo:</p>
+                <p id="texto_restante"></p>
             </div>
         </div>
     </div>
