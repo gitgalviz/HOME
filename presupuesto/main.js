@@ -10,6 +10,17 @@ function formatearMoneda(valor) {
     });
 }
 
+function mostrarAlerta(mensaje) {
+    let alerta = document.getElementById("alert");
+    alerta.textContent = mensaje;
+    alerta.classList.remove("alert2");
+    alerta.classList.add("alert2");
+    setTimeout(() => {
+        alerta.textContent = "";
+        alerta.classList.remove("alert2");
+    }, 2000);
+}
+
 function iniciar() {
     presupuesto_Inicial = parseFloat(document.getElementById("box0").value);
 
@@ -23,19 +34,9 @@ function iniciar() {
         document.getElementById("texto_presupuesto").textContent = formatearMoneda(presupuesto_Inicial);
         saldo_Restante = presupuesto_Inicial;
         document.getElementById("texto_restante").textContent = formatearMoneda(saldo_Restante);
-        // mensajePresupuesto.textContent = "Añade tus gastos";
         document.querySelector(".saldo").style.backgroundColor = "#01ad04";
     } else {
-        alert("Registre un presupuesto mayor a cero");
-        // mensajePresupuesto.textContent = "Registre un presupuesto mayor a cero";
-        // mensajePresupuesto.style.color = "red";
-        // mensajePresupuesto.style.fontWeight = "bold";
-
-        // setTimeout(function () {
-        //     mensajePresupuesto.textContent = "Registra el presupuesto";
-        //     mensajePresupuesto.style.color = "#595c5c";
-        //     mensajePresupuesto.style.fontWeight = "normal";
-        // }, 2000);
+        mostrarAlerta("Registre un presupuesto mayor a cero")
     };
 };
 
@@ -68,40 +69,16 @@ function registrar() {
             }
 
             if (saldo_Restante <= 0) {
-                document.querySelector(".boton_s").disabled = true;
-                alert("Sin presupuesto");
-                // mensajeSecundario.textContent = "Sin presupuesto";
-                // mensajeSecundario.style.color = "red";
-                // setTimeout(function () {
-                //     mensajeSecundario.textContent = "Gasto Semanal";
-                //     mensajeSecundario.style.color = "#000000";
-                // }, 2000);
+                document.querySelector(".boton5").disabled = true;
+                mostrarAlerta("Sin presupuesto");
             } else {
-                document.querySelector(".boton_s").disabled = false;
+                document.querySelector(".boton5").disabled = false;
             }
         } else {
-            alert("No cuenta con el presupuesto suficiente para este gasto");
-            // mensajePresupuesto.textContent = "No cuenta con el presupuesto suficiente para este gasto";
-            // mensajePresupuesto.style.color = "red";
-            // mensajePresupuesto.style.fontWeight = "bold";
-
-            // setTimeout(function () {
-            //     mensajePresupuesto.textContent = "Añade tus gastos";
-            //     mensajePresupuesto.style.color = "#595c5c";
-            //     mensajePresupuesto.style.fontWeight = "normal";
-            // }, 2000);
+            mostrarAlerta("No cuenta con el presupuesto suficiente para este gasto");
         }
     } else {
-        alert("Por favor, ingrese un nombre y una cantidad válidos");
-        // mensajePresupuesto.textContent = "Por favor, ingrese un nombre y una cantidad válidos";
-        // mensajePresupuesto.style.color = "red";
-        // mensajePresupuesto.style.fontWeight = "bold";
-
-        // setTimeout(function () {
-        //     mensajePresupuesto.textContent = "Añade tus gastos";
-        //     mensajePresupuesto.style.color = "#595c5c";
-        //     mensajePresupuesto.style.fontWeight = "normal";
-        // }, 2000);
+        mostrarAlerta("Por favor, ingrese un nombre y una cantidad válidos");
     };
 };
 
@@ -110,9 +87,9 @@ function borrarGasto(button, cantidad) {
     saldo_Restante += cantidad;
     document.getElementById("texto_restante").textContent = formatearMoneda(saldo_Restante);
     if (saldo_Restante <= 0) {
-        document.querySelector(".boton_s").disabled = true;
+        document.querySelector(".boton5").disabled = true;
     } else {
-        document.querySelector(".boton_s").disabled = false;
+        document.querySelector(".boton5").disabled = false;
     }
 
     if (saldo_Restante < presupuesto_Inicial * 0.2) {

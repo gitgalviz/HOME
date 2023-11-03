@@ -30,7 +30,7 @@ body {
     justify-content: center;
     border-radius: 10px;
     border: 6px solid rgb(187, 255, 177);
-    width: 60%;
+    width: 80%;
     height: auto;
     padding: 60px;
 }
@@ -120,7 +120,7 @@ body {
     margin: 10px 0;
 }
 
-.cards{
+.card{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     border: 2px solid rgb(179, 179, 179);
@@ -148,4 +148,45 @@ body {
     color: white;
     width: 40%;
     padding: 8px;
+}
+
+@media(max-width: 1100px){
+    .cont_main{
+        flex-direction: column;
+    }
+
+    .cont_main1{
+        margin: 0;
+    }
+
+    .cont_main2{
+        margin: 10px 0 0 0;
+    }
+
+    .cont_03, .box0, .box1, .box2{
+        width: 100%;
+    }
+}
+
+@media(max-width: 600px) {
+    .cont_main{
+        width: 95%;
+    }
+}
+
+.alert{
+    position: absolute;
+    padding: 10px 2%;
+    background-color: rgb(255, 0, 0);
+    top: 100px;
+    border-radius: 10px;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.alert2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
