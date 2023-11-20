@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRESUPUESTO</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="alert" id="alert">
+        <p></p>
+    </div>
+    <div class="titulo_01">
+        <p>Gasto Semanal</p>
+    </div>
+    <div class="cont_main">
+        <div class="cont_main1">
+            <div class="tit_compra">
+                <p>Añade tus Gastos aquí</p>
+            </div>
+            <div class="cont_00">
+                <p>Presupuesto:</p>
+                <input class="box0" type="text" name="presupuesto" id="box0" placeholder="ingrese el presupuesto" />
+            </div>
+            <div class="cont_01">
+                <p>Gasto:</p>
+                <input class="box1" type="text" name="nombre" id="box1" placeholder="Nombre del Gasto" />
+            </div>
+            <div class="cont_02">
+                <p>Cantidad:</p>
+                <input class="box2" type="text" name="cantidad" id="box2" placeholder="Cantidad en $" />
+            </div>
+            <div class="cont_03">
+                <input class="boton1" type="button" value="Agregar" id="boton_p" placeholder="Agregar" onclick="iniciar()"/>
+                <input class="boton5" type="button" value="Agregar" id="boton_s" placeholder="Agregar" onclick="registrar()"/>
+            </div>
+        </div>
+        <div class="cont_main2">
+            <div class="titulo_02">
+                <p>Listado</p>
+            </div>
+            <div class="cont_cards" id="cont_cards">
+                
+            </div>
+            <div class="presu">
+                <p>Presupuesto:</p>
+                <p id="texto_presupuesto"></p>
+            </div>
+            <div class="saldo">
+                <p>Saldo:</p>
+                <p id="texto_restante"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

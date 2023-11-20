@@ -1,0 +1,103 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    gap: 20px;
+    padding: 50px 5%;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.titulo_card {
+    background-color: #1e90ff;
+    border-radius: 7px;
+    width: 100%;
+    height: 110px;
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+}
+
+.num_mes {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+}
+
+.mes {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+}
+
+.tg_dias {
+    text-align: center;
+    color: red;
+    gap: 10px;
+
+}
+
+.num {
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.nuevos {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(183, 183, 201);
+}
+
+.icono {
+    font-size: 30px;
+    color: #FF5733;
+    display: flex;
+    position: absolute;
+    width: 60%;
+    justify-content: space-between;
+    top: 98px;
+}
+
+
+@media(max-width: 1100px){
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 5%;
+    }
+}
+
+@media(max-width: 700px){
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 5%;
+    }
+}
+
+@media(max-width: 300px){
+    .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 5%;
+    }
+}

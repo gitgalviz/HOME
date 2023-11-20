@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA VIRTUAL</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js"></script>
+
+</head>
+<header>
+    <div class="header">
+        <div class="h1">
+            <img class="titulo" src="./IMG/passport_id.png">
+            <h1>REYES DEL CAMINO</h1>
+        </div>
+        <div class="h1">
+            <img onclick="IniciarCarrito()" class="carrito" src="./IMG/carrito-de-compras.png">
+            <h1>CARRITO DE COMPRAS </h1>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="info">
+        <img src="./IMG/logo.jpeg" alt="Imagen de información">
+    </div>
+    <div class="disponibles">
+        <h1>
+            AUTOS DISPONIBLES
+        </h1>
+    </div>
+    <nav id="body1">
+        <div class="cont_carrito" id="carrito-lista">
+            <div class="cerrar_Carrito">
+                <i onclick="FinCarrito()" class="fa-solid fa-xmark"></i>
+            </div>
+            <table class="tg">
+                <thead>
+                    <tr>
+                        <th class="tg-titulo tit1">Imagen</th>
+                        <th class="tg-titulo tit2">Nombre</th>
+                        <th class="tg-titulo tit3">Precio</th>
+                        <th class="tg-titulo tit4">Cant</th>
+                        <th class="tg-titulo tit5">Subtotal</th>
+                        <th class="tg-titulo tit6"></th>
+                    </tr>
+                </thead>
+                <tbody id="carrito-tabla">
+    
+                </tbody>
+            </table>
+            <div class="footer_tabla">
+                <div class="cont_vaciar">
+                    <button onclick="vaciarCarrito()">Vaciar</button>
+                </div>
+                <div class="cont_total_tabla">
+                    <p class="text_total_tabla" id="total-carrito"></p>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="cards" id="cards">
+
+    </div>
+</body>
+<footer class="footer">
+    <a href="#">Para Tu Negocio</a>
+    <a href="#">Compra Ahora</a>
+    <a href="#">Soporte</a>
+    <a href="#">Credifacil</a>
+    <a href="#">Empleo</a>
+    <a href="#">Blogs</a>
+    <a href="#">Referencias</a>
+    <a href="#">Referencias Personales</a>
+    <a href="#">¿Quienes Somos?</a>
+</footer>
+
+</html>
