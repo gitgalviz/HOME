@@ -68,13 +68,13 @@ function guardarDatos() {
     nuevaCitaAsignada.className = 'citaAsignadaCard';
     nuevaCitaAsignada.innerHTML = `
         <img src="${rutaImagen}" alt="Imagen de la mascota" style="max-width: 100%; height: auto;">
-        <p> Nombre Mascota = ${nombreMascota}</p>
-        <p> Propietario = ${propietario}</p>
-        <p> Telefono = ${telefono}</p>
-        <p> Tipo Mascota = ${tipoMascota}</p>
-        <p> Fecha = ${fecha}</p>
-        <p> Hora = ${hora}</p>
-        <p> Sintomas = ${sintomas}</p>
+        <p class="nombreMascotaCard"> Nombre Mascota = ${nombreMascota}</p>
+        <p class="propietarioCard"> Propietario = ${propietario}</p>
+        <p class="telefonoCard"> Telefono = ${telefono}</p>
+        <p class="tipoCard"> Tipo Mascota = ${tipoMascota}</p>
+        <p class="fechaCard"> Fecha = ${fecha}</p>
+        <p class="horaCard"> Hora = ${hora}</p>
+        <p class="sintomasCard"> Sintomas = ${sintomas}</p>
         <button onclick="editarCita(${nuevaMascota.id})">Editar</button>
         <button onclick="anularCard(${nuevaMascota.id})">Anulada</button>
         <button onclick="cerrarCard(${nuevaMascota.id})">Terminada</button>
@@ -185,4 +185,72 @@ function determinarRutaImagen(tipoMascota) {
     }
 }
 
+function editarCita(id){
+    let index = mascotas.findIndex((mascota) => mascota.id === id);
 
+    if(index !== -1){
+        let registro = mascotas[index];
+
+        mostrarFormularioEditar(registro, index);
+    }
+}
+
+function mostrarFormularioEditar(registro, index){
+    let formulario = document.getElementById("formulario");
+
+    formulario.querySelector("#nombreMascota").value = registro.nombre;
+    formulario.querySelector("#propietario").value = registro.propietario;
+    formulario.querySelector("#telefono").value = registro.telefono;
+
+    let tipo = 0;
+    if(registro.tipo === "PECES"){
+        tipo = 1;
+    } else if(registro.tipo === "ANFIBIOS"){
+        tipo = 2;
+    } else if(registro.tipo === "REPTILES"){
+        tipo = 3;
+    } else if(registro.tipo === "AVES"){
+        tipo = 4;
+    } else if(registro.tipo === "MAMIFEROS"){
+        tipo = 5;
+    }
+
+    formulario.querySelector("#tipoMascota").value = tipo;
+    formulario.querySelector("#fecha").value = registro.fecha;
+    formulario.querySelector("#hora").value = registro.hora;
+    formulario.querySelector("#sintomas").value = registro.sintomas;
+
+    let btnEnviar = formulario.querySelector("#btnEnviar");
+    btnEnviar.onclick = function() {
+        guardarDatosEditados(registro, index);
+    };
+
+    formulario.style.display = "block";
+}
+
+function guardarDatosEditados(registro, index){
+    registro.nombre = document.querySelector("#nombreMascota").value;
+    registro.propietario = document.querySelector("#propietario").value;
+    registro.telefono = document.querySelector("#telefono").value;
+    registro.tipo = document.querySelector("#tipoMascota").value;
+    registro.fecha = document.querySelector("#fecha").value;
+    registro.hora = document.querySelector("#hora").value;
+    registro.sintomas = document.querySelector("#sintomas").value;
+
+    registro.card.querySelector(".nombreMascotaCard").textContent = `Nombre Mascota = ${registro.nombre}`;
+    registro.card.querySelector(".propietarioCard").textContent = `Propietario = ${registro.propietario}`;
+    registro.card.querySelector(".telefonoCard").textContent = `Telefono = ${registro.telefono}`;
+    registro.card.querySelector(".tipoCard").textContent = `Tipo Mascota = ${registro.tipo}`;
+    registro.card.querySelector(".fechaCard").textContent = `Fecha = ${registro.fecha}`;
+    registro.card.querySelector(".horaCard").textContent = `Hora = ${registro.hora}`;
+    registro.card.querySelector(".sintomasCard").textContent = `Sintomas = ${registro.sintomas}`;
+
+    let formulario = document.getElementById("formulario");
+    let btnEnviar = formulario.querySelector("#btnEnviar");
+    btnEnviar.onclick = function(){
+        guardarDatos();
+    }
+
+    formulario.style.display = "none";
+    renderizarCitas();
+}

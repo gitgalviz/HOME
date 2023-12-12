@@ -235,10 +235,93 @@ button:hover {
 }
 
 .citasAsignadasContent {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
 }
 
+.citasAnuladasContent{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
 
+.citasTerminadasContent{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
 
+@media(max-width:1070px){
+    .citasAsignadasContent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .citasAnuladasContent{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .citasTerminadasContent{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
 
+@media(max-width:650px){
+    .citasAsignadasContent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .citasAnuladasContent{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .citasTerminadasContent{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    h1{
+        font-size: 16px;
+    }
+    .content_mayor label {
+        font-size: 12px;
+    }
+    .styled-select select {
+        padding: 8px;
+        font-size: 12px;
+        border: 1px solid #ccc;
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+@media(max-width:430px){
+    .citasAsignadasContent {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+    
+    .citasAnuladasContent{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+    
+    .citasTerminadasContent{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+}

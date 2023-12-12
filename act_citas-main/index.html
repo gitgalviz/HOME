@@ -53,7 +53,7 @@
             <label for="tipoMascota">Tipo de Mascota:</label>
             <div class="styled-select">
                 <select name="tipoMascota" id="tipoMascota" required onchange="cambiarImagen()">
-                    <option value="" disabled selected>Seleccione Una Opcion</option>
+                    <option value="" disabled selected>Seleccione</option>
                     <option value="PECES">PECES</option>
                     <option value="ANFIBIOS">ANFIBIOS</option>
                     <option value="REPTILES">REPTILES</option>
@@ -78,7 +78,7 @@
             <br>
 
             <div class="button">
-                <input type="button" value="Enviar" onclick="guardarDatos()">
+                <input id="btnEnviar" type="button" value="Enviar" onclick="guardarDatos()">
             </div>
 
         </div>
