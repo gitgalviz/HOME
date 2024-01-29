@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnador</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js"></script>
+</head>
+<body>
+    <section class="info">
+        <div id="cont_cards" class="cont1">
+        </div>
+        <div class="cont2">
+            <div class="cont2_info">
+                <div class="cont_btn_sacar">
+                    <button onclick="new_shift()" class="btn_sacar">Sacar ficho</button>
+                </div>
+                <div class="cont_titulo_sacar">
+                    <p class="text_titulo_sacar">El turno es:</p>
+                </div>
+            </div>
+            <div class="cont_cards_nuevas">
+                <div class="card_ficho">
+                    <p id="num" class="num_ficho">0</p>
+                </div>
+            </div>
+            <div class="cont_btns">
+                <div class="cont_btn_anterior">
+                    <button onclick="previous_shift()" class="btn_anterior">Anterior</button>
+                </div>
+                <div class="cont_btn_siguiente">
+                    <button onclick="next_shift()" class="btn_siguiente">Siguiente</button>
+                </div>
+                <div class="cont_btn_reset">
+                    <button onclick="resetPage()" class="btn_reset">Reiniciar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

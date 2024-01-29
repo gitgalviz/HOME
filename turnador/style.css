@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #84deff;
+}
+
+section.info {
+    display: flex;
+    padding: 20px;
+}
+
+.cont1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 70%;
+}
+
+.cards {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.text_num_card{
+    font-size: 24px;
+    margin-bottom: 10px;
+
+}
+
+.cont2 {
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 20px;
+    width: 30%;
+}
+
+.alertadso {
+    position: relative;
+    padding: 15px;
+    background-color: #f44336;
+    /* Rojo */
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.card_ficho {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+}
+
+.cont_cards_nuevas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.num_ficho {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cont_info_card {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+
+.text_titulo_sacar {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+.btn_sacar {
+    background-color: #3498db;
+    color: #000000;
+    padding: 15px 30px;
+    border: 2px solid #2980b9;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn_sacar:hover {
+    background-color: #0400ff;
+    color: #fff;
+}
+
+.btn_aceptar,
+.btn_rechazar {
+    background-color: #eaeea3;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: #000000;
+}
+
+.btn_aceptar:hover {
+    background-color: #009311;
+}
+
+.btn_rechazar:hover {
+    background-color: #a50202;
+}
+
+.cont_btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn_anterior,
+.btn_siguiente,
+.btn_reset {
+    background-color: #e74c3c;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Times New Roman';
+}
+
+.btn_anterior:hover,
+.btn_siguiente:hover,
+.btn_reset:hover {
+    background-color: #c0392b;
+}
+
+.cards.accepted {
+    background-color: #009311;
+}
+
+.cards.rejected {
+    background-color: #a50202;
+}
+
+@media(max-width: 1100px){
+    .cont1 {
+        grid-template-columns: repeat(2, 1fr);
+        margin-right: 2%;
+    }
+}
+
+@media(max-width: 900px){
+    .info {
+        flex-direction: column;
+    }
+
+    .cont1 {
+        width: 100%;
+    }
+
+    .cont2 {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 520px){
+    .cont1 {
+        grid-template-columns: repeat(1, 1fr);
+        margin-right: 0;
+    }
+}
